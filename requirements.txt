@@ -5,3 +5,4 @@ langchain-huggingface>=0.2.2
 langchain-google-genai>=0.0.5
 langchain-community>=0.1.9
 pinecone-client>=2.2.0
+langchain-pinecone>=0.2.12
