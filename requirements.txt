@@ -6,3 +6,5 @@ langchain-google-genai>=0.0.5
 langchain-community>=0.1.9
 pinecone-client>=2.2.0
 langchain-pinecone>=0.2.12
+pydantic<2.1
+sentence-transformers>=2.2.2
