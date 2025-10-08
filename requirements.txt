@@ -4,7 +4,6 @@ langchain==0.3.27
 langchain-huggingface==0.3.1
 langchain-google-genai==2.1.12
 langchain-community==0.3.29
-pinecone-client==6.0.0
 langchain-pinecone==0.2.12
 sentence-transformers==5.1.1
 pinecone==7.3.0
