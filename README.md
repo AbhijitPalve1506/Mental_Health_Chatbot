@@ -77,6 +77,15 @@ Mental Health Chatbot/
 - Keep your API keys secure
 - This chatbot is for educational purposes only, not medical advice
 
+### Attribution & API Use
+
+This project uses third-party APIs and publicly available open-source materials for educational and research purposes.
+
+- The chatbot integrates with OpenAI and Pinecone APIs under their respective Terms of Service.
+- The knowledge base is built using open-source book material licensed for non-commercial or educational use.
+
+All proprietary APIs and data sources remain the property of their respective owners.
+
 ## 🤝 Contributing
 
 Feel free to submit issues and enhancement requests!
