@@ -12,10 +12,12 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.prompts import PromptTemplate
 from langchain.chains import RetrievalQA
 from dotenv import load_dotenv
-
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = ""
 
 # Load environment variables
 load_dotenv()
+# ---------- Setup Embeddings + Pinecone ----------
 HUGGINGFACE_MODEL = os.getenv("HUGGINGFACE_MODEL")
 INDEX_NAME = os.getenv("INDEX_NAME", "mental-health-chatbot")
 # ---------- System Prompt (Defensive + "no book names in output") ----------
@@ -80,11 +82,12 @@ CRISIS_FALLBACK_RESPONSE = (
     "You’re not alone, and help is available."
 )
 
-# ---------- Setup Embeddings + Pinecone ----------
-HUGGINGFACE_MODEL = os.getenv("HUGGINGFACE_MODEL")
-INDEX_NAME = os.getenv("INDEX_NAME", "mental-health-chatbot")
+#embeddings = HuggingFaceEmbeddings(model_name=HUGGINGFACE_MODEL)
+embeddings = HuggingFaceEmbeddings(
+    model_name="sentence-transformers/all-MiniLM-L6-v2",
+    model_kwargs={"device": "cpu"}
+)
 
-embeddings = HuggingFaceEmbeddings(model_name=HUGGINGFACE_MODEL)
 vectorstore = PineconeVectorStore(index_name=INDEX_NAME, embedding=embeddings)
 
 # Use top-k retrieval
